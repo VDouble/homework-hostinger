@@ -23,4 +23,6 @@ public class TestsProps {
 
     public static String URL = properties.getProperty("URL");
 
+    public static int TIMEOUT = Integer.parseInt(properties.getProperty("TIMEOUT"));
+
 }
