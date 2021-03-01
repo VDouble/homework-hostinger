@@ -36,9 +36,9 @@ public class RegionSelectionPage {
     telsiu = new Button($(byText("Telšių")),LOGGER,"Telšių"),
     taurages = new Button($(byText("Tauragės")),LOGGER,"Tauragės");
 
-    public Heading followingCitiesHeading =
+    public Heading followingRegionsHeading =
             new Heading($(byText("Pasirinkite apskritį, kurioje norite apsipirkti:"))
-                    ,LOGGER,"Following cities");
+                    ,LOGGER,"Following regions");
 
     /**
      * This method is used for checking if tests are in Region Selection Page.
@@ -46,7 +46,7 @@ public class RegionSelectionPage {
 
     public void checkIfPageIsOpen()
     {
-        followingCitiesHeading.isVisible();
+        followingRegionsHeading.isVisible();
 
         vilniaus.isVisible();
         kauno.isVisible();
