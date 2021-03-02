@@ -21,10 +21,15 @@ public class TestsProps {
 
     private static Properties properties = readProps("config.properties");
 
+    private static Properties credentials = readProps("config.properties");
+
     public static String URL = properties.getProperty("URL");
 
     public static int TIMEOUT = Integer.parseInt(properties.getProperty("TIMEOUT"));
 
     public static boolean CLOSE_AD_IF_APPEARS = Boolean.parseBoolean(properties.getProperty("CLOSE_AD_IF_APPEARS"));
 
+    public static String EMAIL = credentials.getProperty("EMAIL");
+
+    public static String PASSWORD = credentials.getProperty("PASSWORD");
 }
