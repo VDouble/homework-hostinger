@@ -119,6 +119,30 @@ public class UiWebStaticObject {
     }
 
     /**
+     * This method is used to get value.
+     */
+
+    public String getValue()
+    {
+        return getValue(TestsProps.TIMEOUT);
+    }
+
+
+    /**
+     * This method is used to get value.
+     * @param timeout This parameter in which locator should be found.
+     */
+    public String getValue(long timeout)
+    {
+        closeADIfAppear();
+        String value =locator.shouldBe(Condition.visible, Duration.ofSeconds(timeout))
+                .getValue();
+        LOGGER.debug("In less then {} seconds from {} \"{}\" value \"{}\" was took",timeout,objectName,elementName,value);
+
+        return value;
+    }
+
+    /**
      * This method closes AD if it's appears.
      */
     protected void closeADIfAppear()
