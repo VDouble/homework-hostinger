@@ -50,6 +50,7 @@ public class TextField extends UiWebDynamicObject {
      */
     public void fillTextField(String text, long timeout)
     {
+        closeADIfAppear();
         locator.shouldBe(Condition.visible, Duration.ofSeconds(timeout))
                 .shouldBe(Condition.enabled, Duration.ofSeconds(timeout))
                 .setValue(text);

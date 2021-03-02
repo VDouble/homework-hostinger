@@ -6,6 +6,9 @@ import configurations.TestsProps;
 import org.slf4j.Logger;
 import java.time.Duration;
 
+import static com.codeborne.selenide.Selectors.byXpath;
+import static com.codeborne.selenide.Selenide.$;
+
 /**
  * <h1>UI Web Static Object class</h1>
  * The UI Web Static Object class implements logic of controlling a
@@ -22,7 +25,7 @@ import java.time.Duration;
 public class UiWebStaticObject {
 
     protected Logger LOGGER;
-    protected SelenideElement locator;
+    protected SelenideElement locator, closeOfAdd = $(byXpath("//div[@class='modal-header']/h1/button"));
     protected String objectName, elementName;
 
     /**
@@ -57,7 +60,8 @@ public class UiWebStaticObject {
      */
     public void isVisible()
     {
-        locator.is(Condition.visible);
+        closeADIfAppear();
+        locator.shouldBe(Condition.visible);
         LOGGER.debug("{} \"{}\" is visible",objectName,elementName);
     }
 
@@ -66,7 +70,8 @@ public class UiWebStaticObject {
      */
     public void isNotVisible()
     {
-        locator.is(Condition.not(Condition.visible));
+        closeADIfAppear();
+        locator.shouldBe(Condition.not(Condition.visible));
         LOGGER.debug("{} \"{}\" is not visible",objectName,elementName);
     }
 
@@ -86,6 +91,7 @@ public class UiWebStaticObject {
      */
     public void waitUntilVisible(long timeout)
     {
+        closeADIfAppear();
         locator.shouldBe(Condition.visible, Duration.ofSeconds(timeout));
         LOGGER.debug("In less then {} seconds {} \"{}\" is visible",timeout,objectName,elementName);
     }
@@ -107,8 +113,21 @@ public class UiWebStaticObject {
      */
     public void waitUntilNotVisible(long timeout)
     {
+        closeADIfAppear();
         locator.shouldBe(Condition.not(Condition.visible), Duration.ofSeconds(timeout));
         LOGGER.debug("In less then {} seconds {} \"{}\" is not visible",timeout,objectName,elementName);
+    }
+
+    /**
+     * This method closes AD if it's appears.
+     */
+    protected void closeADIfAppear()
+    {
+        if (TestsProps.CLOSE_AD_IF_APPEARS && closeOfAdd.is(Condition.visible))
+        {
+            closeOfAdd.click();
+            LOGGER.debug("Successfully closed AD");
+        }
     }
 
 

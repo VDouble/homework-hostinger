@@ -47,6 +47,7 @@ public class Button extends UiWebDynamicObject{
      */
     public void clickButton(long timeout)
     {
+        closeADIfAppear();
         locator.shouldBe(Condition.visible, Duration.ofSeconds(timeout))
                 .shouldBe(Condition.enabled, Duration.ofSeconds(timeout))
                 .click();

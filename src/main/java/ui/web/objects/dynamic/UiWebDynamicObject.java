@@ -43,7 +43,8 @@ public class UiWebDynamicObject extends UiWebStaticObject {
      */
     public void isDisabled()
     {
-        locator.is(Condition.disabled);
+        closeADIfAppear();
+        locator.shouldBe(Condition.disabled);
         LOGGER.debug("{} \"{}\" is disabled",objectName,elementName);
     }
 
@@ -52,7 +53,8 @@ public class UiWebDynamicObject extends UiWebStaticObject {
      */
     public void isEnabled()
     {
-        locator.is(Condition.enabled);
+        closeADIfAppear();
+        locator.shouldBe(Condition.enabled);
         LOGGER.debug("{} \"{}\" is enabled",objectName,elementName);
     }
 
@@ -72,6 +74,7 @@ public class UiWebDynamicObject extends UiWebStaticObject {
      */
     public void waitUntilDisabled(long timeout)
     {
+        closeADIfAppear();
         locator.shouldBe(Condition.disabled, Duration.ofSeconds(timeout));
         LOGGER.debug("In less then {} seconds {} \"{}\" is disabled",timeout,objectName,elementName);
     }
@@ -93,6 +96,7 @@ public class UiWebDynamicObject extends UiWebStaticObject {
      */
     public void waitUntilEnabled(long timeout)
     {
+        closeADIfAppear();
         locator.shouldBe(Condition.not(Condition.enabled), Duration.ofSeconds(timeout));
         LOGGER.debug("In less then {} seconds {} \"{}\" is enabled",timeout,objectName,elementName);
     }

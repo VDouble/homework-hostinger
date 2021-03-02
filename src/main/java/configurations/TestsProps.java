@@ -25,4 +25,6 @@ public class TestsProps {
 
     public static int TIMEOUT = Integer.parseInt(properties.getProperty("TIMEOUT"));
 
+    public static boolean CLOSE_AD_IF_APPEARS = Boolean.parseBoolean(properties.getProperty("CLOSE_AD_IF_APPEARS"));
+
 }

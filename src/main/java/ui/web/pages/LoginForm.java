@@ -33,7 +33,7 @@ public class LoginForm {
     public TextField email = new TextField($(byId("b-login-email")),LOGGER,"Email"),
             password = new TextField($(byId("b-login-password")),LOGGER,"Password");
 
-    public Paragraph greating = new Paragraph($(byClassName("help-block")),LOGGER,"Greating"),
+    public Paragraph greeting = new Paragraph($(byClassName("help-block")),LOGGER,"Greating"),
             capsLock = new Paragraph($(byClassName("b-caps-lock-on")),LOGGER,"Caps Lock on"),
             fieldMustBeFilled = new Paragraph($(byText("Laukas privalo būti užpildytas")),LOGGER, "Field Must Be Filled");
 
@@ -42,7 +42,7 @@ public class LoginForm {
      */
     public void checkIfPageIsOpen()
     {
-        greating.isVisible();
+        greeting.isVisible();
 
         email.isVisible();
         password.isVisible();

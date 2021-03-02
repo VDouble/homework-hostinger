@@ -49,6 +49,7 @@ public class Selector extends UiWebDynamicObject {
      */
     public void selectOption(String optionText,long timeout)
     {
+        closeADIfAppear();
         locator.shouldBe(Condition.visible, Duration.ofSeconds(timeout))
                 .shouldBe(Condition.enabled, Duration.ofSeconds(timeout))
                 .selectOption(optionText);
@@ -72,6 +73,7 @@ public class Selector extends UiWebDynamicObject {
      */
     public void selectOption(int optionNumber,long timeout)
     {
+        closeADIfAppear();
         locator.shouldBe(Condition.visible, Duration.ofSeconds(timeout))
                 .shouldBe(Condition.enabled, Duration.ofSeconds(timeout))
                 .selectOption(optionNumber);
@@ -95,6 +97,7 @@ public class Selector extends UiWebDynamicObject {
      */
     public void selectOptionByValue(String optionValue,long timeout)
     {
+        closeADIfAppear();
         locator.shouldBe(Condition.visible, Duration.ofSeconds(timeout))
                 .shouldBe(Condition.enabled, Duration.ofSeconds(timeout))
                 .selectOptionByValue(optionValue);
