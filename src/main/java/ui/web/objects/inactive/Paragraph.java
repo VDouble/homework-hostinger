@@ -18,7 +18,7 @@ import org.slf4j.Logger;
 public class Paragraph extends UiWebStaticObject {
 
     /**
-     * This constructor is used to construct UiWebStaticObject.
+     * This constructor is used to construct Paragraph.
      * For constructor following parameters needed:
      * @param locator This is SelenideElement which is used for interacting with browser.
      * @param LOGGER This is Logger which is used for logging debug level messages.

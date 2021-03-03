@@ -38,7 +38,7 @@ public class TypeOfBarboraSelectionPage {
 
     public void checkIfPageIsOpen()
     {
-        followingRegionsHeading.isVisible();
+        followingRegionsHeading.waitUntilVisible();
 
         barbora.isVisible();
         barboraExpress.isVisible();

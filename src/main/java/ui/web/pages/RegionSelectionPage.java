@@ -46,7 +46,7 @@ public class RegionSelectionPage {
 
     public void checkIfPageIsOpen()
     {
-        followingRegionsHeading.isVisible();
+        followingRegionsHeading.waitUntilVisible();
 
         vilniaus.isVisible();
         kauno.isVisible();
