@@ -1,5 +1,7 @@
 package ui.web.browser;
 
+import configurations.TestsProps;
+
 import static com.codeborne.selenide.Selenide.open;
 
 /**
@@ -31,7 +33,7 @@ public class Browser {
     public static void openChromeBrowser(String url)
     {
 
-        System.setProperty("webdriver.chrome.driver", "chromedriver");
+        System.setProperty("webdriver.chrome.driver", TestsProps.CHROMEDRIVER_PATH);
         System.setProperty("selenide.browser", "chrome");
 
         open(url);

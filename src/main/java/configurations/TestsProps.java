@@ -21,7 +21,7 @@ public class TestsProps {
 
     private static Properties properties = readProps("config.properties");
 
-    private static Properties credentials = readProps("config.properties");
+    private static Properties credentials = readProps("credentials.properties");
 
     public static String URL = properties.getProperty("URL");
 
@@ -32,4 +32,6 @@ public class TestsProps {
     public static String EMAIL = credentials.getProperty("EMAIL");
 
     public static String PASSWORD = credentials.getProperty("PASSWORD");
+
+    public static String CHROMEDRIVER_PATH = properties.getProperty("CHROMEDRIVER_PATH");
 }
