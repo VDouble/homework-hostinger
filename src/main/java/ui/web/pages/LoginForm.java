@@ -42,7 +42,7 @@ public class LoginForm {
      */
     public void checkIfPageIsOpen()
     {
-        greeting.isVisible();
+        greeting.waitUntilVisible();
 
         email.isVisible();
         password.isVisible();
